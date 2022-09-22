@@ -1,0 +1,169 @@
+div#Topmob-sec {
+  display: block;
+  z-index: 9999999999;
+  position: relative;
+}
+
+body#Topmob-sec {
+  position: sticky;
+  top: 0;
+}
+.is-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+  background-color:#ffffffed !important;
+  animation: 0.5s ease-in-out 0s normal none 1 running fadeInDown;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#Topmob-sec .navbar-brand {
+    width: 20%;
+}
+#Topmob-sec .btn-rt {
+    text-align: right;
+}
+#Topmob-sec .navbar-toggler , :focus{
+    border: none;
+}
+#Topmob-sec button.navbar-toggler {
+    padding: 0px;
+}
+#Topmob-sec .btn-rt .get-btn {
+    background-color: #154b37;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    padding: 7px 10px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 600;
+}
+.manu-grid {
+    display: flex;
+    grid-gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu1 {
+    width: 100%;
+}
+.logoct img {
+  max-width: 23%;
+  padding: 10px 0px;
+  transition: all ease-in-out 0.6s;
+}
+.logoct {
+    text-align: center;
+}
+
+/* topheader */
+#menu__toggle {
+  opacity: 0;
+  display: none;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+  position:absolute;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+  transform: translate(0px, 0px);
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transition-duration: .25s;
+}
+.menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height:100vh;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #ECEFF1;
+  box-shadow: 2px 2px 6px rgb(0 0 0 / 40%);
+  transition-duration: .25s;
+}
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #000;   
+   font-family: 'Red Hat Display', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+.menu__item:hover {
+  background-color: #CFD8DC;
+  color: #154b37;
+}
+
+
+
+/* responsive */
+@media (max-width:1200px) {
+#mapreacg-sec {
+  background-position: center !important;
+}
+}
+
+@media (max-width:767px) {
+
+}
+@media (max-width:667px) {
+    #Topmob-sec .btn-rt .get-btn {
+        font-size: 12px;
+    }
+    #menuToggle {
+        top: 20px;
+    }
+    .logoct img {
+      max-width: 50%;
+  }
+  }
+
+
+
+
+
+@media (max-width:375px) {
+  #Topmob-sec .btn-rt .get-btn {
+  font-size: 12px;
+  padding: 7px 8px !important;
+  }
+}

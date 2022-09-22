@@ -1,0 +1,306 @@
+
+section#AmenitiesDetails{
+    text-align: center;
+    padding-bottom:60px;
+    padding-top:0px;
+}
+section#AmenitiesDetails .explor-section {
+    text-align: center;
+}
+.Ament-mian {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 25px;
+    text-align: center;
+}
+.At-item1:nth-child(n+6) {
+    display: none;
+}
+.explor-section p {
+    padding: 0px 124px;
+}
+.Atimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.Ament-title {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    
+}
+.Atimg img {
+    height: 100%;
+    width: 100%;
+}
+
+.At-item1 {
+    box-shadow: 1px 1px 20px 0px #f2f2f2;
+    padding: 15px;
+    background: #cce8de;
+}
+.Ament-title h5 {
+    font-size: 24px;
+    color: #1d1d1d;
+    font-family: 'Red Hat Display', sans-serif;
+    text-align: center;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: capitalize;
+}
+
+/* tab css */
+.wall-content h3 {
+    font-size: 22px;
+    line-height: 28px;
+    color: #131312;
+    font-weight: bold;
+    font-family: 'Red Hat Display', sans-serif;
+}
+.specification-ct h3 {
+    font-size: 22px;
+    line-height: 28px;
+    color: #131312;
+    font-weight: bold;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    color: #155c37;
+    background-color: #fff;
+    box-shadow: 1px 1px 20px 0px #f2f2f2;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #cce8de;
+}
+#Specifications .tab-content>.active {
+    /* box-shadow: 1px 1px 20px 0px #f2f2f2; */
+    padding: 20px;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: #cce8de;
+}
+.tab-des.col-sm-9 {
+    background-color: #cce8de;
+    box-shadow: 1px 1px 20px 0px #f2f2f2;
+}
+.nav-pills .nav-link {
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    font-family: 'Red Hat Display', sans-serif;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f2f2f2;
+    border-radius: 0px;
+}
+.specifictab .row>* {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-top: 0px;
+}
+
+
+/* payment sec start */
+
+#Payment-sec {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.Payment-main h3 {
+    padding-bottom: 20px;
+}
+#Payment-sec .Payment-main {
+    text-align: center;
+}
+#Payment-sec .extra-ct th {
+    color: #1d1d1d;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 600;
+    font-family: 'Red Hat Display', sans-serif;
+}
+.extra-ct {
+    border-top: 3px solid #155b37;
+}
+#Payment-sec .extra-ct  thead {
+    background-color: #f2f2f2;
+}
+table.table.table-extra.table-striped .categry-tble td {
+    text-align: left;
+}
+.categry-tble thead th {
+    text-align: center;
+}
+table.table.table-extra {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.categry-tble tbody td {
+    text-align: left;
+}
+.categry-tble tr th {
+    width: 65%;
+}
+
+.extra-ct tbody td {
+    padding: 20px !important;
+}
+.categry-tble tr:nth-child(even) {
+    background-color:#f2f2f2;
+ }
+ .table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: #fff;
+    color: var(--bs-table-striped-color);
+}
+.categry-tble span {
+    background: #d7d7d7;
+    padding: 4px 12px;
+    border-radius: 36px;
+    margin-right: 10px;
+}
+.Deposittable span {
+    background: #d7d7d7;
+    padding: 3px 10px;
+    border-radius: 36px;
+    width: 22px;
+    margin-right: 10px;
+}
+.Deposittable tbody td {
+    text-align: left;
+}
+.categry-tble tbody td:nth-child(2) {
+    text-align: center;
+}
+
+/* .extra-ct tbody tr:nth-child(14) {
+    background: #1d4b37c7 !important;
+} */
+.extra-ct tbody td:nth-child(14) {
+    color: #fff;
+}
+
+
+/* deposite table */
+.Deposit {
+    padding-top: 45px;
+}
+
+.Deposittable tr td {
+    width: 65% !important;
+}
+
+
+/* responsive */
+
+@media (max-width:1024px) {
+    .Ament-title {
+        padding-top: 20px;
+    }
+    .Ament-title {
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+    .Ament-title h5 {
+        font-size: 20px;
+    }
+}
+@media (max-width:992px) {
+section#AmenitiesDetails {
+    padding-bottom: 40;
+    padding-top: 40px;
+}
+}
+
+
+@media (max-width:767px) {
+    .Ament-mian {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    section#AmenitiesDetails {
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+    .explor-section p {
+        padding: 0PX;
+    }
+    .Ament-title {
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+    section#plan-details {
+        padding-top: 30PX;
+        padding-bottom: 30PX;
+    }
+  
+    .specifictab .row {
+        flex-direction: column;
+    }
+    .specifictab .row>* {
+        width: 100%;
+    }
+    .specifictab .nav-item {
+        text-align: center;
+    }
+    #Payment-sec {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .specifictab .flex-column {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 10px;
+    }
+    .specifictab {
+        padding: 10px;
+    }
+    .specifictab .row {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+}
+
+@media (max-width:568px) {
+#Payment-sec .extra-ct th {
+    font-size: 16px;
+    line-height: 26px;
+}
+.extra-ct tbody td {
+    padding: 10px !important;
+}
+.extra-ct td {
+    font-size: 14px;
+    line-height: 26px;
+}
+.categry-tble span {
+    padding: 4px 10px;
+}
+.Atimg img {
+    height: auto;
+    width: auto;
+}
+
+.specifictab .nav-pills .nav-link {
+    font-size: 14px;
+    line-height: 26px;
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 12px;
+}
+#Specifications h3 {
+    padding-bottom: 10px;
+}
+.Ament-mian {
+    grid-template-columns: repeat(1,1fr);
+}
+
+}
+
+@media (max-width:400px) {
+.Ament-title h5 {
+    font-size: 16px;
+    line-height: 26px;
+}
+}
