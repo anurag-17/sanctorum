@@ -65,7 +65,7 @@ export const Footer = () => {
 
 </ul>
 <ul className='chkbx'>  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-<label for="vehicle1"> By giving my phone number, i agree to being contacted by Phone, SMS, Whatsapp or any other chanel.</label> </ul>
+<label htmlFor="vehicle1"> By giving my phone number, i agree to being contacted by Phone, SMS, Whatsapp or any other chanel.</label> </ul>
 
 <input type="submit" value="ENQUIRE NOW"/>
 </form> 

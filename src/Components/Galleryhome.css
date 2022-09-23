@@ -170,6 +170,20 @@ photo-list {
   width: 320px;
 }
 
+.btn.btn-dark.showbtn {
+    background-color: #154b37;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    padding: 7px 10px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 600;
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+.btn.btn-dark.showbtn {
+  margin-bottom: 40px;
+}
 
 
   /* responsive */

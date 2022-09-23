@@ -9,12 +9,10 @@ import Flooring from './Flooring';
 import Sanitary from './Sanitary';
 import Work from './Work';
 import Doors from './Doors';
-import Others from './Others ';
 import Electricals from './Electricals';
 import Safety from './Safety';
 import WaterSupply from './WaterSupply';
 import GreenBuilding from './GreenBuilding';
-import Amtimg1 from '../Components/images/outdoore.png'
 
 const Explore = () => {
 
@@ -65,7 +63,7 @@ const Explore = () => {
             </div>
             <div className='Ament-mian'>
                     {amenity.map((post, index) => (
-                        <div className='At-item1'>
+                        <div className='At-item1' key={index}>
                               <div className='Atimg'>
                                 <img src={post.acf.feature_images} alt={post.title.rendered}></img>
                               </div>                   
@@ -85,7 +83,7 @@ const Explore = () => {
                <h3>{exploredata.specification_title}</h3>
                <div className='specifictab'>
                <Tab.Container id='left-tabs-example' defaultActiveKey="first">
-                <Row g-0>
+                <Row g-0="true">
                     <Col sm={3}>
                     <Nav variant="pills" className='flex-column'>
                         <Nav.Item>

@@ -55,7 +55,7 @@ const handleOffice = () => {
           <h3 className='mob-maptitle'>Everything Within Reach</h3>
             <div className='reach-map'>
                 <div className='reach-left'>
-                    <div id="map-container-google-1" classNmae="z-depth-1-half map-container reach-map">
+                    <div id="map-container-google-1" className="z-depth-1-half map-container reach-map">
                       
                     {
   school&&
@@ -92,16 +92,16 @@ office&&
                 <div className='reach-right'>
                   <h3 >Everything Within Reach</h3>
                   <div
-                  defaultActiveKey="School"
+                  defaultactivekey="School"
                   id="uncontrolled-tab-example"
                   className="mb-3 tab-rt"
                 >
                   
               <ul className='tabs-links'>
-              <li className={school&& "active"} eventKey="School" title="School" onClick={handleSchool}>Hospitals Nearby </li>
-              <li className={market&& "active"} eventKey="Market" title="Market" onClick={handleMarket}>Markets </li>
-              <li className={connectivity&& "active"} eventKey="Connectivity" title="Connectivity" onClick={handleConnectivity}>Connectivity</li>
-              {/* <li className={office&& "active"} eventKey="Offices" title="Offices" onClick={handleOffice}> office</li> */}
+              <li className={school ? "active" :undefined} eventkey="School" title="School" onClick={handleSchool}>Hospitals Nearby </li>
+              <li className={market ? "active" :undefined} eventkey="Market" title="Market" onClick={handleMarket}>Markets </li>
+              <li className={connectivity ? "active" :undefined} eventkey="Connectivity" title="Connectivity" onClick={handleConnectivity}>Connectivity</li>
+              {/* <li className={office ? "active" :undefined} eventkey="Offices" title="Offices" onClick={handleOffice}> office</li> */}
               </ul>
                
                <div className='tablecontebts-map'>

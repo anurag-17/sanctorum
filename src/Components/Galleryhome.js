@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './Galleryhome.css';
 import Masony from "react-masonry-component";
-import InfiniteScroll from "react-infinite-scroll-component";
 import Carousel from 'react-bootstrap/Carousel';
-import gallery1 from '../Components/Photos/gallery_1.jpg';
-import gallery2 from '../Components/Photos/gallery_2.jpg';
-import gallery3 from '../Components/Photos/gallery_3.jpg';
-import gallery4 from '../Components/Photos/gallery_4.jpg';
-import gallery5 from '../Components/Photos/gallery_5.jpg';
-import gallery6 from '../Components/Photos/gallery_6.jpg';
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
-
+import { initial, slice } from 'lodash'
 
 // Masory Options
 const masonryOptions = {
@@ -21,10 +12,11 @@ const masonryOptions = {
   itemSelector: ".photo-item"
 };
 
-
-
-export default function Galleryhome({ postsToRender }) {
+export default function App() {
   const [imagesData, setImagesData] = React.useState([]);
+  const [isFinished, setIsFinished] = useState(false)
+  const [index, setIndex] = useState(6)
+  const initialUsers = slice(imagesData, 0, index)
 
   const [imageModal, setImageModal] = React.useState({
     showModal: false,
@@ -39,8 +31,6 @@ export default function Galleryhome({ postsToRender }) {
     getData();
   }, []);
 
-
-  
   const getData = () => {
    fetch('https://controlf5.co.in/client-demo/sanctorum-wordpress/wp-json/wp/v2/gallery_slider/')
       .then((response) => response.json())
@@ -51,9 +41,19 @@ export default function Galleryhome({ postsToRender }) {
       .catch((err) => {});
   };
 
+  const showMore = () => {
+    setIndex(index+2)
+    //console.log(index)
+    if (index >= imagesData.length) {
+      setIsFinished(true)
+    } else {
+      setIsFinished(false)
+    }
+  }
+
   const fetchData = () => {
     setPage(getData.acf);
-    console.log();
+    //console.log();
     getData();
   };
 
@@ -61,7 +61,6 @@ export default function Galleryhome({ postsToRender }) {
   //  console.log("refresh.....");
   };
 
-  
   const onSet = (type) => {
     if (type == "prev") {
       if (imageModal.imageIndex != 0) {
@@ -91,60 +90,42 @@ export default function Galleryhome({ postsToRender }) {
   };
 
 //console.log(imagesData);
-
-
-
-
-
-//mobile slider
-const [timeline, setTimeline] = useState([]);
-const [cosntructionsdata, setCosntructionsdata] = useState([]);
+const [glyttl, setGlyttl] = useState([]);
   
 useEffect(() => {
-           async function Timelines(){
-               const timelinedata = await fetch('https://controlf5.co.in/client-demo/react-wordpress/wp-content/uploads/2022/');
-               const timelinedatas = await timelinedata.json();
-               setTimeline(timelinedatas.acf);
-               //console.log(timelinedatas.acf);    
+                async function gallerycon(){
+               const gallerycondata = await fetch('https://controlf5.co.in/client-demo/sanctorum-wordpress/wp-json/wp/v2/pages/33');
+               const gallerycondatas = await gallerycondata.json();
+               setGlyttl(gallerycondatas.acf);
            }
-           Timelines();
-           async function cosntructionss(){
-               const constructiondata = await fetch('https://controlf5.co.in/client-demo/react-wordpress/wp-json/wp/v2/construction_status');
-               const constructionpost = await constructiondata.json();
-               setCosntructionsdata(constructionpost);
-           }
-           cosntructionss();
+           gallerycon();
+        
 },[])
 
-  //mobile slider end
-  
- 
 
-  return (    
+  return (
     <>
     <section id='gallery'>
-      <div class='container'>
-        <h4> gallery</h4>
-        <h3>Recent Site Photos</h3>
-          <div class='galley-main'>
-            <div class='conatiner'>            
+      <div className='container'>
+      <h4> {glyttl.gallery_title}</h4>
+        <h3>{glyttl.gallery_subtitle}</h3>
+          <div className='galley-main'>
+            <div className='conatiner'>            
               <div className='desktop-gallery'>
-                <div dataLength={imagesData.length}
-                  next={fetchData}
-                  hasMore={true}
+                <div datalength={imagesData.length}
+                  hasmore="true"
                   loader={<h4></h4>}
-                  endMessage={
+                  endmessage={
                     <p style={{ textAlign: "center" }}>
                       <b>Yay! You have seen it all</b>
                     </p>
                   }
-                  refreshFunction={refresh}
-                  pullDownToRefresh
-                  pullDownToRefreshThreshold={8}
-                  pullDownToRefreshContent={
+                  pulldowntorefresh="true"
+                  pulldowntorefreshthreshold={6}
+                  pulldowntorefreshcontent={
                     <h3 style={{ textAlign: "center" }}>&#8595; Pull down to refresh</h3>
                   }
-                  releaseToRefreshContent={
+                  releasetorefreshcontent={
                     <h3 style={{ textAlign: "center" }}>&#8593; Release to refresh</h3>
                   }
                 >
@@ -155,8 +136,8 @@ useEffect(() => {
                     disableImagesLoaded={false}
                     updateOnEachImageLoad={false}
                   >
-                    {
-                      postsToRender .map((photo, index) => (
+                    {imagesData &&
+                      initialUsers.map((photo, index) => (
                         <li className={`photo-item`} key={index}>
                           <img
                             src={photo.acf.image}
@@ -171,58 +152,43 @@ useEffect(() => {
                             }}
                           />
                         </li>
-                      ))}                      
-                  </Masony>  
-
+                        
+                      ))}
+                  </Masony>
                 </div>
+              {
+
+              isFinished ? (
+                <button
+                  onClick={showMore}
+                  type="button"
+                  className="btn btn-info disabled"
+                >
+                  Nothing left ...
+                </button>
+              ) : (
+                <button onClick={showMore} type="button" className="btn btn-dark showbtn">
+                  Load more
+                </button>
+              )}
+
+                
+
               </div> 
 
-
-          <div className='mob-gallery'>
-          <Carousel>
-          <Carousel.Item interval={1000}>
+               <div className='mob-gallery'>
+               <Carousel>
+          {imagesData &&
+                      imagesData.map((photo, index) => (
+          <Carousel.Item interval={1000} key={index}>
             <img
               className='d-block w-100'
-              src={gallery1}
+              src={photo.acf.image}
               alt="First slide"
             />
             
           </Carousel.Item>
-          <Carousel.Item interval={500}>
-            <img
-              className='d-block w-100'
-              src={gallery2}
-              alt="Second slide"
-            />       
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className='d-block w-100'
-              src={gallery3}
-              alt="Third slide"
-            />       
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className='d-block w-100'
-              src={gallery4}
-              alt="Third slide"
-            />       
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className='d-block w-100'
-              src={gallery5}
-              alt="Third slide"
-            />       
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className='d-block w-100'
-              src={gallery6}
-              alt="Third slide"
-            />       
-          </Carousel.Item>
+          ))}
 
         </Carousel>
           </div>    
